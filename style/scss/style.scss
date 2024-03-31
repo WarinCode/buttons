@@ -1,0 +1,276 @@
+@font-face {
+  font-family: Poppins;
+  src: url("/fonts/Poppins-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins !important;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background: #f0f0f0;
+}
+
+$blue: rgb(16, 82, 223);
+$shadow: #b6b6b6e1;
+
+%btn {
+  width: 170px !important;
+  height: 50px !important;
+  text-transform: capitalize !important;
+  border: none;
+  outline: none;
+  cursor: pointer !important;
+  font-size: 15px !important;
+  letter-spacing: 0.4px;
+  padding: 10px;
+}
+
+%radius-oval {
+  border-radius: 50px !important;
+}
+
+%radius-square {
+  border-radius: 0 !important;
+}
+
+%raidus-normal {
+  border-radius: 7px !important;
+}
+
+@mixin addBoxShadow($defaultColor: $shadow) {
+  box-shadow: -1px 9px 8px $defaultColor;
+}
+
+i {
+  font-size: 19px;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-flow: row;
+  gap: 50px 5px;
+  width: 600px;
+  max-width: 620px;
+  min-width: 320px;
+  height: max-content;
+  margin-top: 30px;
+  padding: 50px;
+
+  button {
+    @extend %btn;
+  }
+
+  .btn-1 {
+    @extend %raidus-normal;
+    @include addBoxShadow();
+    background-color: white;
+    font-weight: bold;
+  }
+
+  .btn-2 {
+    @extend %raidus-normal;
+    @include addBoxShadow();
+    background: linear-gradient(to right, #7c07ebe8, rgb(222, 9, 230));
+    font-weight: thin;
+    color: white;
+  }
+
+  .btn-3 {
+    @extend %radius-oval;
+    @include addBoxShadow();
+    color: $blue;
+    background-color: white;
+    border: 2.5px solid $blue;
+    font-weight: bold;
+  }
+
+  .btn-4 {
+    @extend %radius-oval;
+    @include addBoxShadow();
+    font-weight: thin;
+    color: white;
+    background: linear-gradient(
+      150deg,
+      rgba(110, 151, 241, 0.829),
+      rgba(47, 77, 248, 0.945),
+      rgba(12, 46, 240, 0.945)
+    );
+  }
+
+  .btn-5 {
+    @extend %radius-square;
+    @include addBoxShadow();
+    background: transparent;
+    border: 2.5px $blue solid;
+    color: $blue;
+    font-weight: bold;
+  }
+
+  .btn-6 {
+    @extend %radius-oval;
+    @include addBoxShadow();
+    background: white;
+    border: 2.5px $blue solid;
+    color: $blue;
+    font-weight: bold;
+  }
+
+  .btn-7 {
+    @extend %radius-square;
+    @include addBoxShadow();
+    color: white;
+    background: linear-gradient(
+      150deg,
+      rgb(207, 117, 248),
+      rgb(182, 58, 240),
+      #980bda
+    );
+    font-weight: normal;
+    i {
+      font-size: 19px;
+      margin-left: 7px;
+    }
+  }
+
+  .btn-8 {
+    @extend %radius-square;
+    @include addBoxShadow();
+    color: white;
+    background: linear-gradient(
+      150deg,
+      rgba(110, 151, 241, 0.829),
+      rgba(47, 77, 248, 0.945),
+      rgba(12, 46, 240, 0.945)
+    );
+    font-weight: normal;
+    i {
+      margin-left: 7px;
+    }
+  }
+
+  .btn-9 {
+    @extend %raidus-normal;
+    @include addBoxShadow();
+    color: white;
+    background: linear-gradient(
+      150deg,
+      #874eff,
+      rgba(111, 48, 253, 255),
+      rgb(104, 43, 237)
+    );
+    padding-left: 5px;
+    font-weight: normal;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    span:nth-child(1) {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      background-color: #5e25e0;
+      @extend %raidus-normal;
+      i {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        font-size: 19px;
+      }
+    }
+    span:nth-child(2) {
+      margin: auto;
+    }
+  }
+
+  .btn-10 {
+    @extend %radius-oval;
+    @include addBoxShadow();
+    color: white;
+    background: linear-gradient(
+      150deg,
+      #874eff,
+      rgba(111, 48, 253, 255),
+      rgb(104, 43, 237)
+    );
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span:nth-child(2) {
+      width: 32px;
+      height: 32px;
+      background-color: rgba(245, 245, 245, 0.247);
+      border-radius: 50px;
+      margin-left: 5px;
+      i {
+        transform: translateY(25%);
+        display: block;
+        // margin: auto
+      }
+    }
+  }
+
+  .btn-11 {
+    @extend %raidus-normal;
+    @include addBoxShadow();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 0 !important;
+    div {
+      padding: 15px;
+    }
+    div:nth-child(1) {
+      border-radius: 7px 0 0 7px;
+      height: 100%;
+      background-color: rgba(39, 65, 255, 255);
+      flex-grow: 2;
+    }
+    div:nth-child(2) {
+      border-radius: 0 7px 7px 0;
+      flex-grow: 1;
+      background-color: rgba(80, 111, 255, 255);
+      height: 100%;
+    }
+  }
+
+  .btn-12 {
+    @extend %raidus-normal;
+    @include addBoxShadow();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      190deg,
+      rgba(122, 0, 255, 255),
+      rgba(140, 4, 254, 255),
+      rgba(179, 2, 253, 255),
+      rgba(215, 1, 255, 255)
+    );
+    color: white;
+    div:nth-child(1) {
+      flex-grow: 1;
+    }
+    div:nth-child(2) {
+      width: 1px;
+      height: 100%;
+      opacity: 0.4;
+      background-color: white;
+      flex-grow: 0;
+    }
+    div:nth-child(3) {
+      flex-grow: 1;
+    }
+  }
+}
